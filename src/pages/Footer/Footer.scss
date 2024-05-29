@@ -1,0 +1,19 @@
+// Footer.scss
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+
+  .bi {
+    font-size: 32px; // Tamaño inicial del icono
+    transition: transform 0.3s ease; // Agrega una transición suave para la animación
+    color: #fff; // Color de los iconos
+  }
+
+
+
+    .copyright {
+    text-align: center;
+  }
+  
+}

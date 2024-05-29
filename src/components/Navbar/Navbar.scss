@@ -1,0 +1,57 @@
+@import '../../styles/variables.scss';
+
+.nav {
+ position: fixed; /* Establece la posición fija */
+  top: 0; /* La fija en la parte superior */
+  width: 100%; /* La hace ocupar el ancho completo de la ventana */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  background-color: $background-color-light; /* Utiliza la variable Sass */
+  color: $text-color-light; /* Utiliza la variable Sass */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li {
+      flex-grow: 1;
+
+      a {
+        color: $text-color-light; /* Utiliza la variable Sass */
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s ease;
+
+        &:hover,
+        &.active {
+          background-color: #0d6efd;
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .nav{
+    background-color: $background-color-dark; /* Utiliza la variable Sass */
+    color: $text-color-dark ; /* Utiliza la variable Sass */
+    /* Resto de tu código */
+    li{
+      a{
+        color: $text-color-dark ;
+      } 
+    } 
+  }
+
+ 
+  
+}
