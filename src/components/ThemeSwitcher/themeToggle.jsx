@@ -1,31 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React,{useEffect} from 'react';
 import './ThemeSwitcher.scss';
 
-const ThemeSwitcher = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
+const ThemeSwitcher = ({theme, handleThemeChange}) => {
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    setIsDarkMode(savedTheme === 'dark');
-  }, []);
+    document.body.classList.toggle('dark-mode', theme === 'dark');
+  }, [theme]);
 
-  const toggleTheme = () => {
-    const newTheme = isDarkMode ? 'light' : 'dark';
-    localStorage.setItem('theme', newTheme); // Guarda el estado en el almacenamiento local
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle('dark-mode', !isDarkMode);
-  };
+  const sunIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M6.995 12c0-2.761 2.246-5 5.005-5 2.758 0 5 2.239 5 5s-2.242 5-5 5c-2.759 0-5.005-2.239-5.005-5zm11.962-1h2.043c.554 0 1 .447 1 1 0 .553-.446 1-1 1h-2.043c-.554 0-1-.447-1-1 0-.553.446-1 1-1zm-15.96 1c0-.553.446-1 1-1h2.043c.554 0 1 .447 1 1 0 .553-.446 1-1 1h-2.043c-.554 0-1-.447-1-1zm9.003-7.964v-2.036c0-.553-.447-1-1-1-.553 0-1 .447-1 1v2.036c0 .553.447 1 1 1 .553 0 1-.447 1-1zm0 15.928v-2.036c0-.553-.447-1-1-1-.553 0-1 .447-1 1v2.036c0 .553.447 1 1 1 .553 0 1-.447 1-1zm-6.138-13.217l-1.42-1.42c-.39-.391-1.022-.391-1.414 0-.39.39-.39 1.022 0 1.414l1.42 1.42c.39.391 1.022.391 1.414 0 .391-.39.391-1.023 0-1.414zm10.834 10.835l-1.42-1.42c-.39-.391-1.023-.391-1.414 0-.39.39-.39 1.023 0 1.414l1.42 1.42c.391.391 1.023.391 1.414 0 .391-.391.391-1.023 0-1.414zm-10.834 0c.391-.391.391-1.023 0-1.414l-1.42-1.42c-.391-.391-1.023-.391-1.414 0-.391.391-.391 1.023 0 1.414l1.42 1.42c.391.391 1.023.391 1.414 0zm10.834-10.835c.391-.391.391-1.023 0-1.414l-1.42-1.42c-.391-.391-1.023-.391-1.414 0-.39.39-.39 1.022 0 1.414l1.42 1.42c.391.391 1.023.391 1.414 0z"/>
+    </svg>
+  );
+
+  const moonIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M21.751 15.209c-1.018.254-2.087.354-3.155.29-4.842-.292-8.621-4.071-8.913-8.913-.064-1.067.036-2.137.29-3.154.137-.549-.35-1.036-.898-.898-4.738 1.179-8.12 5.654-7.272 10.692.686 4.072 4.001 7.386 8.073 8.073 5.038.848 9.514-2.534 10.692-7.272.138-.548-.349-1.036-.897-.898z"/>
+    </svg>
+  );
+
   return (
     <div className="theme-switcher">
-      <input
-        type="checkbox"
-        id="toggle"
-        checked={isDarkMode}
-        onChange={toggleTheme}
-      />
-      <label htmlFor="toggle"></label>
+      <span className='text-switcher'>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</span>
+      <button className="theme-button" onClick={handleThemeChange}>
+        {theme === 'light' ? sunIcon : moonIcon }
+      </button>
     </div>
   );
+
 };
 
 export default ThemeSwitcher;

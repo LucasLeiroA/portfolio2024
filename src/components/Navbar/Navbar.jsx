@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ThemeSwitcher from '../ThemeSwitcher/themeToggle';
 import './Navbar.scss';
+import LanguageSwitcher from '../Lenguage/LanguageSwitcher';
 
-const Navbar = ({ isDarkMode, toggleTheme }) => {
+const Navbar = ({ handleLanguageChange, language , theme, handleThemeChange}) => {
   const [activeSection, setActiveSection] = useState('home');
   const [isNavVisible, setIsNavVisible] = useState(false);
 
@@ -38,31 +39,37 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
   };
 
   return (
-    <nav className={`nav ${isDarkMode ? 'dark-mode' : ''}`}>
+    <nav className={`nav ${theme ? 'dark-mode' : ''}`}>
       <div className="logo">Logo</div>
-      <ul className={`${isNavVisible ? 'visible' : ''}`}>
+      <ul className={`nav-links ${isNavVisible ? 'visible' : ''}`}>
+        <li>
+          <button onClick={toggleNavVisibility} className='close-button'>&#10006;</button>
+        </li>
         <li>
           <a href="#home" onClick={() => handleSectionClick('home')} className={activeSection === 'home' ? 'active' : ''}>
-            Inicio
+            {language === 'es' ? 'Inicio' : 'Home'}
           </a>
         </li>
         <li>
           <a href="#about" onClick={() => handleSectionClick('about')} className={activeSection === 'about' ? 'active' : ''}>
-            Sobre mí
+            {language === 'es' ? 'Sobre mí' : 'About'}
           </a>
         </li>
         <li>
           <a href="#projects" onClick={() => handleSectionClick('projects')} className={activeSection === 'projects' ? 'active' : ''}>
-            Proyectos
+            {language === 'es' ? 'Proyectos' : 'Projects'}
           </a>
         </li>
         <li>
           <a href="#contact" onClick={() => handleSectionClick('contact')} className={activeSection === 'contact' ? 'active' : ''}>
-            Contacto
+            {language === 'es' ? 'Contacto' : 'Contact'}
           </a>
         </li>
         <li>
-          <ThemeSwitcher toggleTheme={toggleTheme} />
+          <LanguageSwitcher handleLanguageChange={handleLanguageChange} language={language} />
+        </li>
+        <li>
+        <ThemeSwitcher theme={theme} handleThemeChange={handleThemeChange} />
         </li>
       </ul>
       <button onClick={toggleNavVisibility} className="toggle-button">

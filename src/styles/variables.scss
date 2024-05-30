@@ -14,6 +14,13 @@ $background-color-dark: #333333;
 $text-color-dark: #FFFFFF;
 $border-color-dark: #555555;
 
+$dark-background: #333;
+$light-shadow: rgba(255, 255, 255, 0.1);
+$dark-shadow: rgba(0, 0, 0, 0.2);
+$yellow-glow: rgba(255, 255, 0, 0.5);
+
+
+
 // Define tus variables CSS custom properties para ambos temas
 :root {
   --primary-color: #007BFF;

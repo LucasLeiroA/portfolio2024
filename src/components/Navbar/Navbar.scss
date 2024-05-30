@@ -4,7 +4,7 @@
  position: fixed; /* Establece la posición fija */
   top: 0; /* La fija en la parte superior */
   width: 100%; /* La hace ocupar el ancho completo de la ventana */
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  z-index: 1000000; /* Asegura que esté por encima de otros elementos */
   background-color: $background-color-light; /* Utiliza la variable Sass */
   color: $text-color-light; /* Utiliza la variable Sass */
   padding: 1rem;
@@ -38,6 +38,9 @@
       }
     }
   }
+  .close-button{
+    display: none;
+  }
 }
 
 .dark-mode {
@@ -51,7 +54,78 @@
       } 
     } 
   }
-
- 
   
 }
+
+.toggle-button{
+  display: none;
+}
+
+
+
+
+
+//TODO cambios de resoluciones
+@media (max-width: 768px) {
+
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%; // Oculta la barra lateral al inicio
+    flex-direction: column;
+    width: 80%; // Ancho de la barra lateral en pantallas pequeñas
+    height: 100vh; // Altura completa de la pantalla
+    background-color: $background-color-light; // Color de fondo
+    transition: left 0.3s ease;
+    box-shadow: 0 0 20px $dark-shadow; // Sombra del borde derecho
+  }
+
+
+  .nav .nav-links.visible {
+    left: 0; // Muestra la barra lateral al moverla a la posición inicial
+  }
+  .nav li{
+    margin: auto;
+  }
+  .nav .toggle-button {
+    display: block; // Muestra el botón de alternancia en pantallas pequeñas
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: $text-color-light;
+    cursor: pointer;
+    z-index: 1001; // Asegura que esté por encima de la barra lateral
+
+  }
+  .nav .close-button{
+    display: block; // Muestra el botón de alternancia en pantallas pequeñas
+    position: absolute;
+    top: 10px; /* Distancia desde la parte superior */
+    right: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  // .nav .text-language{
+  //   display: block;
+  // }
+  
+  
+  
+  .dark-mode {
+    .nav .nav-links{
+      background-color:  $background-color-dark; 
+      box-shadow: 0 0 20px $yellow-glow;
+    }
+    .nav .toggle-button{
+      color: $text-color-dark;
+    }
+    
+  }
+}
+
