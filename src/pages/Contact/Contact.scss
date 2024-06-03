@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 
 .container-contact{
+    padding-top: 10vh !important;
     transition: background-color 0.5s ease; 
     background-color: $background-color-light;
 }

@@ -30,9 +30,20 @@
     color: $text-color-dark;
   }
   .container-about{
+
     transition: background-color 0.5s ease; 
     background-color: $background-color-dark;
  
   }
 }
+@media (max-width: 1024px) {
+  .description{
+    padding-top: 3vh !important;
+  }
+}
 
+@media (max-width: 768px) {
+    .container-about{
+    padding-top: 13vh !important;
+  }
+}
