@@ -1,5 +1,15 @@
-.contact-section{
-    padding-top: 10vh;
-    height: 100vh;
-    background-color: red;
+@import "../../styles/variables.scss";
+
+.container-contact{
+    transition: background-color 0.5s ease; 
+    background-color: $background-color-light;
+}
+
+
+
+.dark-mode{
+    .container-contact{
+    transition: background-color 0.5s ease; 
+    background-color: $background-color-dark;
+    }
 }
