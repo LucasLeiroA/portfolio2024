@@ -4,7 +4,6 @@ import './Home.scss'; // Importa los estilos de la página principal
 import fotoPerfil from '../../assets/fotoPerfil.jpeg';
 
 const Home = ({ language, theme }) => {
-  console.log(theme);
   return (
     <section id='home' className={`col-12 main-section ${theme==='dark' ? 'dark-mode' : ''}`}>
       <div className='container-image col-lg-7 col-md-12 m-auto'>
@@ -36,7 +35,6 @@ const Home = ({ language, theme }) => {
       </div>
       <div className='cont-contact'>
         <a href='#contact' className='btn-contact'>{language==='es'?'Contactame':'Contac Me'}</a>
-
       </div>
 
     </section>

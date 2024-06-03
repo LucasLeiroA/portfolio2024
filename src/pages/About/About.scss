@@ -1,5 +1,38 @@
-.about-section{
-    padding-top: 10vh;
-    background-color: green;
-    height: 100vh;
+@import '../../styles/variables.scss';
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
+.btn-contact{
+  background-color: $primary-color-light;
+}
+.container-about{
+  transition: background-color 0.5s ease; 
+  background-color: $background-color-light;
+}
+
+.animation{
+  animation: slideInFromLeft 0.5s ease-in-out forwards;
+}
+
+.description h2, .description h3, .description p , .description span {
+  color: $text-color-light; // Utiliza la variable para el color
+}
+
+.dark-mode{
+
+  .description h2, .description h3, .description p , .description span {
+    color: $text-color-dark;
+  }
+  .container-about{
+    transition: background-color 0.5s ease; 
+    background-color: $background-color-dark;
+ 
+  }
+}
+

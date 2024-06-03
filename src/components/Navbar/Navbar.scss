@@ -5,6 +5,7 @@
   top: 0; /* La fija en la parte superior */
   width: 100%; /* La hace ocupar el ancho completo de la ventana */
   z-index: 1000000; /* Asegura que esté por encima de otros elementos */
+  transition: background-color 0.5s ease; 
   background-color: $background-color-light; /* Utiliza la variable Sass */
   color: $text-color-light; /* Utiliza la variable Sass */
   padding: 1rem;
@@ -29,8 +30,6 @@
         color: $text-color-light; /* Utiliza la variable Sass */
         text-decoration: none;
         padding: 0.5rem 1rem;
-        transition: background-color 0.3s ease;
-
         &:hover,
         &.active {
           background-color: #0d6efd;
@@ -45,6 +44,7 @@
 
 .dark-mode {
   .nav{
+    transition: background-color 0.5s ease; 
     background-color: $background-color-dark; /* Utiliza la variable Sass */
     color: $text-color-dark ; /* Utiliza la variable Sass */
     /* Resto de tu código */
@@ -68,24 +68,34 @@
 //TODO cambios de resoluciones
 @media (max-width: 768px) {
 
+  .container-links{
+    height: 100vh;
+    background-color: red;
+  }
+
+
   .nav .nav-links {
     position: fixed;
     top: 0;
     left: -100%; // Oculta la barra lateral al inicio
     flex-direction: column;
-    width: 80%; // Ancho de la barra lateral en pantallas pequeñas
+    width: 70%; // Ancho de la barra lateral en pantallas pequeñas
     height: 100vh; // Altura completa de la pantalla
+    transition: background-color 0.5s ease !important; 
     background-color: $background-color-light; // Color de fondo
     transition: left 0.3s ease;
     box-shadow: 0 0 20px $dark-shadow; // Sombra del borde derecho
   }
-
+ 
 
   .nav .nav-links.visible {
     left: 0; // Muestra la barra lateral al moverla a la posición inicial
   }
+  .nav ul li {
+     flex-grow: 0; 
+}
   .nav li{
-    margin: auto;
+    margin: 20px auto;
   }
   .nav .toggle-button {
     display: block; // Muestra el botón de alternancia en pantallas pequeñas
@@ -116,9 +126,9 @@
   // }
   
   
-  
   .dark-mode {
     .nav .nav-links{
+      transition: background-color 0.5s ease; 
       background-color:  $background-color-dark; 
       box-shadow: 0 0 20px $yellow-glow;
     }

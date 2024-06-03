@@ -1,5 +1,45 @@
-.projects-container{
-    padding-top: 10vh;
-    height: 100vh;
-    background-color: orange;
+@import '../../styles/variables.scss';
+
+.btn-mundo{
+    display: inline-block;
+    color: green;
+    font-weight: 500;
+
+}
+
+.container-projects{
+    transition: background-color 0.5s ease; 
+    background-color: $background-color-light;
+}
+.project h3 {
+    color: $text-color-light;
+}
+.project span{
+    color: $text-color-dark;
+    transition: background-color 0.5s ease; 
+    background-color: $secondary-color-light;
+}
+
+.container p{
+    color:$text-color-light;
+}
+.dark-mode{
+    .container-projects{
+        transition: background-color 0.5s ease; 
+        transition: background-color 0.5s ease; 
+        background-color: $background-color-dark;
+      }
+      .project span{
+        color: $text-color-dark;
+        transition: background-color 0.5s ease; 
+        background-color: $background-color-dark;
+    }
+    .project a{
+        color: $text-color-dark;
+        transition: background-color 0.5s ease; 
+        background-color: $background-color-dark;
+    }
+    .paraf{
+        color:$text-color-dark;
+    }  
 }

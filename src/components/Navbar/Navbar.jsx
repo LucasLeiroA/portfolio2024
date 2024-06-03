@@ -41,18 +41,20 @@ const Navbar = ({ handleLanguageChange, language , theme, handleThemeChange}) =>
   return (
     <nav className={`nav ${theme ? 'dark-mode' : ''}`}>
       <div className="logo">Logo</div>
+     
       <ul className={`nav-links ${isNavVisible ? 'visible' : ''}`}>
+
         <li>
           <button onClick={toggleNavVisibility} className='close-button'>&#10006;</button>
         </li>
-        <li>
+        {/* <li>
           <a href="#home" onClick={() => handleSectionClick('home')} className={activeSection === 'home' ? 'active' : ''}>
             {language === 'es' ? 'Inicio' : 'Home'}
           </a>
-        </li>
+        </li> */}
         <li>
           <a href="#about" onClick={() => handleSectionClick('about')} className={activeSection === 'about' ? 'active' : ''}>
-            {language === 'es' ? 'Sobre mí' : 'About'}
+            {language === 'es' ? 'Sobre mí' : 'About Me'}
           </a>
         </li>
         <li>
