@@ -174,7 +174,7 @@ const Contact = ({ language, theme }) => {
                   example@email.com
                 </p>
                 <div className="flex items-center space-x-4">
-                  <a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+                  <a href="https://github.com/LucasLeiroA/MundoCelular" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -191,7 +191,7 @@ const Contact = ({ language, theme }) => {
                     </svg>
                     <span className="sr-only">LinkedIn</span>
                   </a>
-                  <a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+                  <a href="https://github.com/LucasLeiroA/MundoCelular" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -208,7 +208,7 @@ const Contact = ({ language, theme }) => {
                     </svg>
                     <span className="sr-only">Instagram</span>
                   </a>
-                  <a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+                  <a href="https://github.com/LucasLeiroA/MundoCelular" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
